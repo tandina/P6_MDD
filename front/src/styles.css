@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+  text-decoration: none;
+  font-size: large;
+  font-family: "summer dream", sans-serif;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+.back {
+  color: white;
+  margin-left: 30px;
+  width: 100px;
+  font-size: xxx-large;
+  text-decoration: none;
+}
+.force {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0);
+  transition: box-shadow 0.3s ease-in-out;
+  animation: pulse 1.5s infinite;
+  width: 200px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px 5px #ca0d72f9;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+.form-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "summer dream", sans-serif;
+  margin-top: 5%;
+}
+.form-card input {
+  font-size: 20px;
+  background-color: #f2f2f2;
+  display: inline-block;
+  width: 200px;
+  margin-left: 10px;
+}
+.form-card label {
+  color: white;
+  text-align: right;
+  display: inline-block;
+  width: 200px;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+.theme-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: "summer dream", sans-serif;
+  margin-top: 5%;
+  margin: 0 auto;
+  list-style: none;
+  max-width: 790px;
+}
+.article-card {
+  background-color: white;
+  border-radius: 25px;
+  width: 330px;
+  height: 220px;
+  padding: 10px;
+  box-shadow: 0 0 20px 10px rgba(115, 114, 114, 0.184);
+  margin: 20px !important;
+}
+.article-card__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.article-infos {
+  justify-content: space-between;
+}
+.subscribe {
+  text-align: center;
+}
+.msg {
+  color: #b9b9b9;
+}
+.divide {
+  border-bottom: 2px solid #aeaeae;
+  margin: 20px 0px 20px 0px;
+}
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+.comment-block {
+  display: flex;
+  flex-direction: row;
+}
+.comment {
+  width: 330px;
+  padding: 40px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  color: black;
+}
+.publish-comment textarea {
+  width: 330px;
+  height: 121px;
+  border-radius: 25px;
+  padding: 20px;
+}
+.send-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.publish-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+.submitBtn {
+  display: flex;
+  width: fit-content;
+  border-radius: 35px;
+  align-items: center;
+  height: 167px;
+}
+.username {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.username p {
+  margin: 2px;
+}
+@media (max-width: 768px) {
+  .form-card input {
+    width: calc(100% - 20px);
+    margin-right: 10px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-card label {
+    text-align: justify;
+    display: inline-block;
+  }
+  .theme-card {
+    padding: 0;
+  }
+  .login-card img {
+    width: 300px;
+  }
+  .submitBtn {
+    position: absolute;
+    left: 310px;
+    background-color: white;
+    border: none;
+    height: fit-content;
+    bottom: -81px;
+  }
+  .detail-card {
+    margin: 0px 15px 3px !important;
+  }
+}

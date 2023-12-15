@@ -1,0 +1,53 @@
+<button (click)="toggleCreateArticleForm()" class="btn">
+  {{ showCreateArticleForm ? "Annuler" : "Créer un article" }}
+</button>
+<form
+  *ngIf="showCreateArticleForm"
+  [formGroup]="articleForm"
+  (ngSubmit)="createArticle()"
+>
+  <div class="form-card">
+    <select formControlName="theme">
+      <option *ngFor="let theme of userThemes" [value]="theme.id">
+        {{ theme.name }}
+      </option>
+    </select>
+    <input
+      formControlName="title"
+      type="text"
+      placeholder="Titre de l'article"
+      class="article-title"
+      maxlength="15"
+    />
+    <textarea
+      formControlName="content"
+      placeholder="Contenu"
+      maxlength="500"
+    ></textarea>
+    <p style="color: white">
+      {{ articleForm.get("content")?.value.length }}/500 caractères écrits
+    </p>
+    <button type="submit" (click)="render()" class="btn">Créer</button>
+  </div>
+</form>
+<div class="divide"></div>
+<p (click)="reverseArticlesOrder()" style="color: white; margin-left: 25px">
+  Inverser l'ordre
+  <span *ngIf="isReversed">&#x25B2;</span>
+  <span *ngIf="!isReversed">&#x25BC;</span>
+</p>
+<div class="theme-card">
+  <div *ngFor="let article of articles" class="article-card">
+    <p>
+      <a [routerLink]="['/articles', article.id]" class="published-title">{{
+        article.title
+      }}</a>
+    </p>
+    <div class="article-infos">
+      <div>{{ article.timestamp | date : "dd/MM/yy, à HH:mm" }}</div>
+      <div>par : {{ article.username }}</div>
+    </div>
+
+    <p>{{ article.content }}</p>
+  </div>
+</div>

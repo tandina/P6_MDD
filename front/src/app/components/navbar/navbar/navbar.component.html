@@ -1,0 +1,71 @@
+<div *ngIf="isLoggedIn" class="app-navbar">
+  <div>
+    <a routerLink="/"
+      ><img
+        class="app-navbar__logo"
+        src="../../../../assets/logop6.png"
+        alt="image mdd"
+      />
+    </a>
+  </div>
+  <div class="app-navbar__router desktop">
+    <a routerLink="/articles" style="padding: 3px">Articles</a>
+    <a routerLink="/themes" style="padding: 3px">Themes</a>
+    <a routerLink="/user" style="padding: 3px"
+      ><img
+        class="app-navbar__router-image"
+        src="../../../../assets/avatar.png"
+        alt="image user"
+        style="padding: 3px"
+    /></a>
+    <span (click)="authService.logout()" style="padding: 3px; cursor: pointer"
+      >Logout</span
+    >
+  </div>
+  <div class="app-navbar__router mobile">
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <div>
+        <img
+          class="burger"
+          src="../../../../assets/menu-icon.png"
+          alt="image user"
+          style="padding: 3px"
+        />
+      </div>
+    </div>
+    <div class="navbar-menu" *ngIf="isMenuOpen">
+      <div class="links-profile">
+        <div class="link-list">
+          <a routerLink="/articles" style="padding: 3px">Articles</a>
+          <a routerLink="/themes" style="padding: 3px">Themes</a>
+          <a
+            (click)="authService.logout()"
+            style="padding: 3px; cursor: pointer"
+            >Logout</a
+          >
+        </div>
+        <a routerLink="/user" style="padding: 3px">
+          <img
+            class="app-navbar__router-image"
+            src="../../../../assets/avatar.png"
+            alt="image user"
+            style="padding: 3px"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isLoggedIn">
+  <div class="app-navbar">
+    <a routerLink="/">
+      <img
+        class="app-navbar__logo"
+        src="../../../../assets/logop6.png"
+        alt="image mdd"
+      />
+    </a>
+
+    <p style="padding: 3px; margin-right: 10px">MDD (Monde de Dév)</p>
+  </div>
+</div>

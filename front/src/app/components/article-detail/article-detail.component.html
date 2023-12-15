@@ -1,0 +1,50 @@
+<div><a routerLink="/articles" class="back">←</a></div>
+
+<div class="detail-card">
+  <div class="detail-infos">
+    <div>
+      <h1 style="color: white; text-align: left">{{ article?.title }}</h1>
+    </div>
+    <div class="detail-infos__texte">
+      <div>{{ article?.timestamp | date : "dd/MM/yy, à HH:mm" }}</div>
+      <div style="margin: 0px 10px 0px 10px">{{ article?.username }}</div>
+      <div>{{ article?.theme.name }}</div>
+    </div>
+    <div>
+      <p class="detail-infos__texte">{{ article?.content }}</p>
+    </div>
+  </div>
+</div>
+<div class="divide"></div>
+
+<div class="comment-card">
+  <h1 style="color: white">Commentaires :</h1>
+  <div *ngFor="let comment of comments" class="comment-block">
+    <div class="username">
+      <p>Username:</p>
+
+      <p>{{ comment.username }}</p>
+    </div>
+    <div class="comment">
+      <p>{{ comment.content }}</p>
+    </div>
+  </div>
+</div>
+<span style="position: relative"></span>
+
+<form [formGroup]="commentForm" (ngSubmit)="postComment()">
+  <div class="publish-comment">
+    <div class="send-comment">
+      <textarea formControlName="content" placeholder="Contenu"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="submitBtn">
+        <img
+          class="app-navbar__router-image"
+          src="../../../assets/icon _send.png"
+          alt="image user"
+        />
+      </button>
+    </div>
+  </div>
+</form>

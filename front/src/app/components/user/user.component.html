@@ -1,0 +1,41 @@
+<div class="form-card">
+  <form (submit)="updateUser()" class="form-group">
+    <div style="text-align: center"><h1>Profil utilisateur</h1></div>
+    <div class="input-field">
+      <input
+        type="text"
+        [(ngModel)]="user.username"
+        name="username"
+        [value]="user.username"
+      />
+      <input
+        type="email"
+        [(ngModel)]="user.email"
+        name="email"
+        [value]="user.email"
+      />
+    </div>
+    <div style="text-align: center">
+      <button type="submit" class="btn">Sauvegarder</button>
+    </div>
+  </form>
+</div>
+
+<div class="divide"></div>
+<div style="text-align: center; color: white">
+  <h1>Abonnements</h1>
+</div>
+<div class="theme-card">
+  <div *ngFor="let theme of themes" class="article-card">
+    <div>
+      <h1>{{ theme.name }}</h1>
+    </div>
+    <p>{{ theme.description }}</p>
+    <p>{{ messages[theme.id] }}</p>
+    <div style="text-align: center">
+      <button (click)="unsubscribe(theme.id)" class="btn" type="submit">
+        Se désabonner
+      </button>
+    </div>
+  </div>
+</div>

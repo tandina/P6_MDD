@@ -1,0 +1,37 @@
+.form-card select {
+  width: 300px;
+  height: 33px;
+}
+.article-title {
+  width: 300px;
+  height: 33px;
+  margin: 30px;
+}
+.form-card textarea {
+  width: 300px;
+  height: 133px;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  font-family: "summer dream", sans-serif;
+  margin-top: 5%;
+  margin: 0 auto;
+  list-style: none;
+  height: auto;
+  max-width: 790px;
+}
+.published-title {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  text-align: left;
+}
+.article-infos {
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  margin-left: 25px;
+}

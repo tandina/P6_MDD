@@ -1,0 +1,14 @@
+<ul class="theme-card">
+  <li *ngFor="let theme of themes" class="article-card">
+    <div class="article-card__title">{{ theme.name }}</div>
+    <div>{{ theme.description }}</div>
+    <div class="subscribe">
+      <button (click)="subscribeToTheme(theme.id)" class="btn">
+        S'abonner
+      </button>
+    </div>
+    <div class="msg">
+      <p>{{ messages[theme.id] }}</p>
+    </div>
+  </li>
+</ul>

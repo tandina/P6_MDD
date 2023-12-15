@@ -1,0 +1,17 @@
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  font-family: "summer dream", sans-serif;
+  margin-top: 5%;
+  align-items: center;
+  margin: 0 auto;
+}
+.detail-infos {
+  display: flex;
+  flex-direction: column;
+}
+.detail-infos__texte {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
